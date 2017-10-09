@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bmi.models.CalculateModel;
 import bmi.models.ResultModel;
 
 @WebServlet("/BMIResult")
@@ -21,6 +22,7 @@ public class ResultController extends HttpServlet{
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		ResultModel person = new ResultModel();
+
 		String Ht = request.getParameter("height");
 		String Wt = request.getParameter("weight");
 		double Htdouble = Double.valueOf(Ht);
@@ -28,6 +30,11 @@ public class ResultController extends HttpServlet{
 
 		person.setHeight(Htdouble);
 		person.setWeight(Wtdouble);
+
+		CalculateModel personCal = new CalculateModel();
+		personCal.execute(person);
+
+
 		request.setAttribute("personBmi",person);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/bmi/views/ResultView.jsp");
