@@ -2,7 +2,6 @@ package bmi.models;
 
 public class ResultModel {
 
-
 	private double Htdouble;
 	private double Wtdouble;
 	private double bmi;

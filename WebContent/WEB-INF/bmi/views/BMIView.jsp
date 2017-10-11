@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="BMIView.css">
 </head>
 <body>
+  <header>
+    <h1>BMICalculator</h1>
+  </header>
+  <h1></h1>
   <div class="box1Wrap">
     <div class="box1">
       <form action = "/BMICal/BMIResult" method="post">
