@@ -4,16 +4,16 @@ public class ResultModel {
 
 	private double Htdouble;
 	private double Wtdouble;
-	private double bmi;
+	private String bmI;
 	private String bodyType;
 
 	public ResultModel(){
 	}
 
-	public ResultModel(double Htdouble, double Wtdouble, double bmi, String bodyType){
+	public ResultModel(double Htdouble, double Wtdouble, String bmI, String bodyType){
 		this.Htdouble = Htdouble;
 		this.Wtdouble = Wtdouble;
-		this.bmi = bmi;
+		this.bmI = bmI;
 		this.bodyType = bodyType;
 
 	}
@@ -36,12 +36,12 @@ public class ResultModel {
 		return this.Wtdouble;
 	}
 
-	public double getBmi(){
-		return this.bmi;
+	public String getBmi(){
+		return this.bmI;
 	}
 
-	public void setBmi(double bmi){
-		this.bmi = bmi;
+	public void setBmi(String bmI){
+		this.bmI = bmI;
 	}
 
 	public String getBodyType(){

@@ -6,8 +6,9 @@ public class CalculateModel {
 		double Htdouble = person.getHeight();
 		double Wtdouble = person.getWeight();
 		double bmi = Wtdouble/(Htdouble/100*Htdouble/100);
+		String bmI = String.format("%1$.1f",bmi);
 
-		person.setBmi(bmi);
+		person.setBmi(bmI);
 
 		String bodyType;
 		if(Htdouble < 0 || Wtdouble < 0){
