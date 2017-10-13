@@ -25,8 +25,18 @@ public class ResultController extends HttpServlet{
 
 		String Ht = request.getParameter("height");
 		String Wt = request.getParameter("weight");
-		double Htdouble = Double.valueOf(Ht);
-		double Wtdouble = Double.valueOf(Wt);
+		double Htdouble;
+		try{
+			Htdouble = Double.valueOf(Ht);
+		} catch (Exception e) {
+			Htdouble = 0;
+		}
+		double Wtdouble;
+		try{
+			Wtdouble = Double.valueOf(Wt);
+		} catch (Exception e) {
+			Wtdouble = 0;
+		}
 
 		person.setHeight(Htdouble);
 		person.setWeight(Wtdouble);
