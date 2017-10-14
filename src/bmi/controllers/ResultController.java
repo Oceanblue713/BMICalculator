@@ -25,17 +25,21 @@ public class ResultController extends HttpServlet{
 
 		String Ht = request.getParameter("height");
 		String Wt = request.getParameter("weight");
+
+		String url = "/WEB-INF/bmi/views/ResultView.jsp";
 		double Htdouble;
 		try{
 			Htdouble = Double.valueOf(Ht);
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			Htdouble = 0;
+			url = "/WEB-INF/bmi/views/BMIView.jsp";
 		}
 		double Wtdouble;
 		try{
 			Wtdouble = Double.valueOf(Wt);
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			Wtdouble = 0;
+			url = "/WEB-INF/bmi/views/BMIView.jsp";
 		}
 
 		person.setHeight(Htdouble);
@@ -47,7 +51,7 @@ public class ResultController extends HttpServlet{
 
 		request.setAttribute("personBmi",person);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/bmi/views/ResultView.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 
 	}
